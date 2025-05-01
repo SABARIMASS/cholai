@@ -1,6 +1,9 @@
+import 'package:cholai/app/core/helpers/image_helper.dart';
+import 'package:cholai/app/views/settings/controller/settings_controller.dart';
 import 'package:flutter/material.dart';
+import 'package:get/state_manager.dart';
 
-class SettingsView extends StatelessWidget {
+class SettingsView extends GetView<SettingsController> {
   const SettingsView({super.key});
 
   @override
@@ -105,12 +108,16 @@ class SettingsView extends StatelessWidget {
 
   Widget _buildProfileSection() {
     return ListTile(
-      leading: const CircleAvatar(
+      leading: CircleAvatar(
         radius: 30,
-        backgroundImage: NetworkImage("https://i.pravatar.cc/150?img=3"),
+        backgroundImage: NetworkImage(
+          ImageHelper.networkImageFullUrl(
+            controller.userService.userInfo.value.profileImage ?? "",
+          ),
+        ),
       ),
-      title: const Text("John Doe"),
-      subtitle: const Text("johndoe@example.com"),
+      title: Text(controller.userService.userInfo.value.name ?? ""),
+      subtitle: Text(controller.userService.userInfo.value.about ?? ""),
       trailing: IconButton(
         icon: const Icon(Icons.edit),
         onPressed: () {

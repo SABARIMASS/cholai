@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:fuzionest_chatai/app/app_intialization/app.dart';
-import 'package:fuzionest_chatai/app/widgets/system_widgets/run_app_error.dart';
+import 'package:cholai/app/app_intialization/app.dart';
+import 'package:cholai/app/widgets/system_widgets/run_app_error.dart';
 import 'package:flutter_native_splash/flutter_native_splash.dart';
 import 'app/app_intialization/controller/app_main.dart';
 
