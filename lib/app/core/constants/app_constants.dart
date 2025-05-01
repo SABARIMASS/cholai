@@ -1,0 +1,5 @@
+class AppConstants {
+  static const String kAppName = 'Fuzionest ChatAI';
+  static const String kServiceToken =
+      "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJvYmwiLCJzdWIiOiI2NmQxZWE1OWFlZTEwN2RlMDMyOTA4YWMiLCJyb2xlIjoiYW5vbiIsInJvbGVJRCI6IjY2ZWJkOWU5NDJlZmYzMTFhYTNhODY3NiIsInVzZXJOYW1lIjoiU3RvY2tYIiwidXNlclR5cGUiOiJzdXBlcl9hZG1pbiIsInVzZXJMZXZlbCI6IjAiLCJyb2xlVHlwZSI6IlMiLCJpYXQiOjE3NDM2NzU0NTgsImV4cCI6NDg5OTQzNTQ1OH0.9A-xNaLUUVBkNwM4dZ-dYCXviRjpxosRu2MCBXSufoQ";
+}
