@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:fuzionest_chatai/app/core/languages/language_global.dart';
-import 'package:fuzionest_chatai/app/widgets/buttons/custom_button.dart';
-import 'package:fuzionest_chatai/shared/theme.dart';
+import 'package:cholai/app/core/languages/language_global.dart';
+import 'package:cholai/app/widgets/buttons/custom_button.dart';
+import 'package:cholai/shared/theme.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:animate_do/animate_do.dart';

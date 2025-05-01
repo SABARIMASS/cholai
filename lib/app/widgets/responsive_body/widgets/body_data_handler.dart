@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:fuzionest_chatai/app/widgets/loader_widgets/app_loader.dart'
+import 'package:cholai/app/widgets/loader_widgets/app_loader.dart'
     show AppLoader;
-import 'package:fuzionest_chatai/shared/theme.dart';
+import 'package:cholai/shared/theme.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../../shared/app_style.dart';
 

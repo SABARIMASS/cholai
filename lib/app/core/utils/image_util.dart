@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:fuzionest_chatai/app/core/constants/image_assets.dart';
-import 'package:fuzionest_chatai/app/core/helpers/enums.dart';
-import 'package:fuzionest_chatai/shared/app_style.dart';
-import 'package:fuzionest_chatai/shared/theme.dart';
+import 'package:cholai/app/core/constants/image_assets.dart';
+import 'package:cholai/app/core/helpers/enums.dart';
+import 'package:cholai/shared/app_style.dart';
+import 'package:cholai/shared/theme.dart';
 import 'package:get/get.dart';
 
 chooseCameraAction({required void Function(CameraAction) onTap}) {

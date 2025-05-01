@@ -1,9 +1,8 @@
-import 'package:fuzionest_chatai/app/core/routes/app_routes.dart'
-    show AppRoutes;
-import 'package:fuzionest_chatai/app/views/auth/views/otp_view.dart';
-import 'package:fuzionest_chatai/app/views/auth/views/profile_setup_view.dart';
-import 'package:fuzionest_chatai/app/views/auth/views/sign_in_view.dart';
-import 'package:fuzionest_chatai/app/views/dashboard/views/dashboard_view.dart';
+import 'package:cholai/app/core/routes/app_routes.dart' show AppRoutes;
+import 'package:cholai/app/views/auth/views/otp_view.dart';
+import 'package:cholai/app/views/auth/views/profile_setup_view.dart';
+import 'package:cholai/app/views/auth/views/sign_in_view.dart';
+import 'package:cholai/app/views/dashboard/views/dashboard_view.dart';
 import 'package:get/get.dart';
 import '../bindings/app_bindings.dart';
 

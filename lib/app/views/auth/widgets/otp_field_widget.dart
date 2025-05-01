@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:fuzionest_chatai/shared/app_style.dart';
-import 'package:fuzionest_chatai/shared/theme.dart';
+import 'package:cholai/shared/app_style.dart';
+import 'package:cholai/shared/theme.dart';
 import 'package:pinput/pinput.dart';
 
 class OtpInputField extends StatefulWidget {

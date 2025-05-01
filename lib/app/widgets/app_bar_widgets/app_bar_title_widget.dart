@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:fuzionest_chatai/app/widgets/buttons/custom_back_button.dart';
-import 'package:fuzionest_chatai/shared/app_style.dart';
-import 'package:fuzionest_chatai/shared/theme.dart';
+import 'package:cholai/app/widgets/buttons/custom_back_button.dart';
+import 'package:cholai/shared/app_style.dart';
+import 'package:cholai/shared/theme.dart';
 
 class AppBarTitleWidget extends StatelessWidget {
   final bool withCircle;

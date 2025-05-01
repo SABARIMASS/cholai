@@ -1,7 +1,7 @@
 import 'dart:io';
 import 'package:flutter/material.dart';
-import 'package:fuzionest_chatai/app/core/utils/logger_util.dart';
-import 'package:fuzionest_chatai/app/views/auth/data/profile_create_api_data.dart';
+import 'package:cholai/app/core/utils/logger_util.dart';
+import 'package:cholai/app/views/auth/data/profile_create_api_data.dart';
 import 'package:get/get.dart';
 import '../../../shared/themex_colors.dart';
 import '../../core/config/app_helpers.dart';

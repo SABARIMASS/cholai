@@ -1,5 +1,5 @@
-import 'package:fuzionest_chatai/app/views/auth/controller/auth_controller.dart';
-import 'package:fuzionest_chatai/app/views/dashboard/controller/dashboard_controller.dart';
+import 'package:cholai/app/views/auth/controller/auth_controller.dart';
+import 'package:cholai/app/views/dashboard/controller/dashboard_controller.dart';
 import 'package:get/get.dart';
 import '../../../network/api_provider.dart';
 

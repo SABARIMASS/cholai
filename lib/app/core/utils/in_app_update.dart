@@ -1,7 +1,7 @@
 import 'dart:io';
-import 'package:fuzionest_chatai/app/core/config/data/get_core_api_data.dart';
-import 'package:fuzionest_chatai/app/core/utils/logger_util.dart';
-import 'package:fuzionest_chatai/shared/theme.dart';
+import 'package:cholai/app/core/config/data/get_core_api_data.dart';
+import 'package:cholai/app/core/utils/logger_util.dart';
+import 'package:cholai/shared/theme.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -32,11 +32,11 @@ class InAppUpdate {
     final int forceUpdateVersionAndroid = intParse(
       appVersionConfig?.androidForceUpdateVersion ?? "1",
     );
-  
+
     final double forceUpdateVersionIos = doubleParse(
       appVersionConfig?.iosForceUpdateVersion ?? '1.0',
     );
-    
+
     LoggerUtil.debug(
       "In App Version Updater  =>In App Update Versions androidUpdate=>$updateVersionAndroid || iosUpdate=>$updateVersionIos",
     );

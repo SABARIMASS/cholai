@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:fuzionest_chatai/app/core/constants/app_constants.dart';
-import 'package:fuzionest_chatai/app/widgets/system_widgets/run_app_error.dart';
+import 'package:cholai/app/core/constants/app_constants.dart';
+import 'package:cholai/app/widgets/system_widgets/run_app_error.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import '../../shared/theme.dart';

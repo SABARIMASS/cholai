@@ -1,4 +1,4 @@
-import 'package:fuzionest_chatai/app/core/services/user_service.dart';
+import 'package:cholai/app/core/services/user_service.dart';
 import 'package:get/get.dart';
 
 class DashBoardController extends GetxController {

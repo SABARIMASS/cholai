@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:fuzionest_chatai/app/core/helpers/app_dialog.dart';
-import 'package:fuzionest_chatai/app/core/local_storage/storage_service.dart';
-import 'package:fuzionest_chatai/app/core/routes/app_routes.dart';
-import 'package:fuzionest_chatai/app/views/auth/data/profile_create_api_data.dart';
-import 'package:fuzionest_chatai/shared/theme.dart';
+import 'package:cholai/app/core/helpers/app_dialog.dart';
+import 'package:cholai/app/core/local_storage/storage_service.dart';
+import 'package:cholai/app/core/routes/app_routes.dart';
+import 'package:cholai/app/views/auth/data/profile_create_api_data.dart';
+import 'package:cholai/shared/theme.dart';
 import 'package:get/get.dart';
 
 class UserService extends GetxService {

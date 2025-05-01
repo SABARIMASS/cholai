@@ -1,7 +1,7 @@
 import 'dart:convert';
 import 'package:flutter/material.dart';
-import 'package:fuzionest_chatai/app/core/utils/logger_util.dart';
-import 'package:fuzionest_chatai/app/views/auth/data/profile_create_api_data.dart';
+import 'package:cholai/app/core/utils/logger_util.dart';
+import 'package:cholai/app/views/auth/data/profile_create_api_data.dart';
 import 'package:get_storage/get_storage.dart';
 import '../config/data/app_access_urls_api_data.dart';
 import '../constants/storage_keys.dart';

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:fuzionest_chatai/shared/theme.dart';
+import 'package:cholai/shared/theme.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'widgets/body_connection_widget.dart';
 import 'widgets/body_data_handler.dart';

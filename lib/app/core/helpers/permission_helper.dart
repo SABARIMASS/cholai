@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:fuzionest_chatai/app/core/helpers/app_dialog.dart';
-import 'package:fuzionest_chatai/shared/theme.dart';
+import 'package:cholai/app/core/helpers/app_dialog.dart';
+import 'package:cholai/shared/theme.dart';
 import 'package:get/get.dart';
 import 'package:permission_handler/permission_handler.dart';
 

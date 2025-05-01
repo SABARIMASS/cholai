@@ -1,4 +1,4 @@
-import 'package:fuzionest_chatai/app/core/languages/languages.dart';
+import 'package:cholai/app/core/languages/languages.dart';
 import 'language_global.dart';
 
 class EnLanguage {

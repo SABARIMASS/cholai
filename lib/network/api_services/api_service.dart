@@ -1,8 +1,8 @@
 import 'dart:convert';
 import 'dart:io';
-import 'package:fuzionest_chatai/app/core/constants/api_constants.dart';
-import 'package:fuzionest_chatai/app/core/languages/language_global.dart';
-import 'package:fuzionest_chatai/app/core/utils/logger_util.dart';
+import 'package:cholai/app/core/constants/api_constants.dart';
+import 'package:cholai/app/core/languages/language_global.dart';
+import 'package:cholai/app/core/utils/logger_util.dart';
 import 'package:get/get.dart';
 import '../api_provider.dart';
 import 'data.dart';

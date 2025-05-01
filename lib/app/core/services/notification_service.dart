@@ -1,8 +1,8 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter_local_notifications/flutter_local_notifications.dart';
-import 'package:fuzionest_chatai/app/core/local_storage/storage_service.dart';
-import 'package:fuzionest_chatai/app/core/utils/logger_util.dart';
+import 'package:cholai/app/core/local_storage/storage_service.dart';
+import 'package:cholai/app/core/utils/logger_util.dart';
 
 class NotificationService {
   static final FlutterLocalNotificationsPlugin _localNotificationsPlugin =

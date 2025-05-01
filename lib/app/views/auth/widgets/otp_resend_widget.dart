@@ -1,12 +1,12 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:fuzionest_chatai/app/core/helpers/snackbar_helper.dart';
-import 'package:fuzionest_chatai/app/core/languages/language_global.dart';
-import 'package:fuzionest_chatai/app/views/auth/service/api_service.dart';
-import 'package:fuzionest_chatai/app/widgets/inkwell/list_inkwell_widget.dart';
-import 'package:fuzionest_chatai/shared/app_style.dart';
-import 'package:fuzionest_chatai/shared/theme.dart';
+import 'package:cholai/app/core/helpers/snackbar_helper.dart';
+import 'package:cholai/app/core/languages/language_global.dart';
+import 'package:cholai/app/views/auth/service/api_service.dart';
+import 'package:cholai/app/widgets/inkwell/list_inkwell_widget.dart';
+import 'package:cholai/shared/app_style.dart';
+import 'package:cholai/shared/theme.dart';
 import 'package:get/get.dart';
 
 class ResendOtpWidget extends StatefulWidget {

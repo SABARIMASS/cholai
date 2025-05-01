@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
-import 'package:fuzionest_chatai/app/app_intialization/controller/my_app_controller.dart';
+import 'package:cholai/app/app_intialization/controller/my_app_controller.dart';
 
-import 'package:fuzionest_chatai/app/core/local_storage/storage_service.dart';
-import 'package:fuzionest_chatai/app/core/utils/logger_util.dart';
-import 'package:fuzionest_chatai/app/widgets/menu_widgets/menu_label_widget.dart';
+import 'package:cholai/app/core/local_storage/storage_service.dart';
+import 'package:cholai/app/core/utils/logger_util.dart';
+import 'package:cholai/app/widgets/menu_widgets/menu_label_widget.dart';
 import 'package:get/get.dart';
 
 themexOnInit() {

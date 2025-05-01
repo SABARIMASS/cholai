@@ -1,4 +1,4 @@
-import 'package:fuzionest_chatai/app/core/config/app_info.dart';
+import 'package:cholai/app/core/config/app_info.dart';
 
 class ApiConstants {
   static String get otpRequest => "${AppInfo.kAuthApi}otp-request";

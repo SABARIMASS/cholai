@@ -1,4 +1,4 @@
-import 'package:fuzionest_chatai/app/core/helpers/snackbar_helper.dart';
+import 'package:cholai/app/core/helpers/snackbar_helper.dart';
 import 'package:image_cropper/image_cropper.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:permission_handler/permission_handler.dart';

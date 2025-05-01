@@ -1,8 +1,8 @@
 import 'dart:convert';
-import 'package:fuzionest_chatai/app/core/constants/api_constants.dart';
-import 'package:fuzionest_chatai/app/core/languages/language_global.dart';
-import 'package:fuzionest_chatai/app/views/auth/data/resend_otp_response_api_data.dart';
-import 'package:fuzionest_chatai/network/api_services/api_service.dart';
+import 'package:cholai/app/core/constants/api_constants.dart';
+import 'package:cholai/app/core/languages/language_global.dart';
+import 'package:cholai/app/views/auth/data/resend_otp_response_api_data.dart';
+import 'package:cholai/network/api_services/api_service.dart';
 import 'package:get/get.dart';
 import '../../../../network/api_provider.dart';
 import '../data/otp_request_api_data.dart';

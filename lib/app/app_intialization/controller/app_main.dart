@@ -1,6 +1,6 @@
 import 'package:firebase_core/firebase_core.dart';
-import 'package:fuzionest_chatai/app/core/services/notification_service.dart';
-import 'package:fuzionest_chatai/app/core/utils/logger_util.dart';
+import 'package:cholai/app/core/services/notification_service.dart';
+import 'package:cholai/app/core/utils/logger_util.dart';
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
 import '../../../shared/themex_colors.dart';

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:fuzionest_chatai/app/core/utils/logger_util.dart';
-import 'package:fuzionest_chatai/shared/theme.dart';
+import 'package:cholai/app/core/utils/logger_util.dart';
+import 'package:cholai/shared/theme.dart';
 import 'package:get/get.dart';
 import '../../app_intialization/controller/my_app_controller.dart';
 import '../../widgets/menu_widgets/menu_label_widget.dart' show MenuItemWidget;

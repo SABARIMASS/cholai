@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:fuzionest_chatai/app/core/config/app_info.dart';
-import 'package:fuzionest_chatai/app/core/utils/logger_util.dart';
-import 'package:fuzionest_chatai/app/widgets/inkwell/list_inkwell_widget.dart';
-import 'package:fuzionest_chatai/shared/theme.dart';
+import 'package:cholai/app/core/config/app_info.dart';
+import 'package:cholai/app/core/utils/logger_util.dart';
+import 'package:cholai/app/widgets/inkwell/list_inkwell_widget.dart';
+import 'package:cholai/shared/theme.dart';
 
 import '../../../../shared/app_style.dart';
 

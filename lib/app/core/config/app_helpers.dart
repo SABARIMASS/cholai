@@ -1,6 +1,6 @@
-import 'package:fuzionest_chatai/app/core/config/utils/enum.dart';
+import 'package:cholai/app/core/config/utils/enum.dart';
 import 'package:device_info_plus/device_info_plus.dart';
-import 'package:fuzionest_chatai/app/core/utils/logger_util.dart';
+import 'package:cholai/app/core/utils/logger_util.dart';
 import '../languages/languages.dart';
 import 'app_info.dart';
 import 'package:android_id/android_id.dart';

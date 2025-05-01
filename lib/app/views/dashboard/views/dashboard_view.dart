@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:fuzionest_chatai/app/views/calls/views/calls_view.dart';
-import 'package:fuzionest_chatai/app/views/chat/views/chats_view.dart';
-import 'package:fuzionest_chatai/app/views/dashboard/controller/dashboard_controller.dart';
-import 'package:fuzionest_chatai/app/views/dashboard/widgets/bottom_bar_widget.dart';
-import 'package:fuzionest_chatai/app/views/home/views/home_view.dart';
-import 'package:fuzionest_chatai/app/views/settings/views/settings_view.dart';
-import 'package:fuzionest_chatai/app/widgets/system_widgets/safe_area_container.dart';
-import 'package:fuzionest_chatai/shared/theme.dart';
+import 'package:cholai/app/views/calls/views/calls_view.dart';
+import 'package:cholai/app/views/chat/views/chats_view.dart';
+import 'package:cholai/app/views/dashboard/controller/dashboard_controller.dart';
+import 'package:cholai/app/views/dashboard/widgets/bottom_bar_widget.dart';
+import 'package:cholai/app/views/home/views/home_view.dart';
+import 'package:cholai/app/views/settings/views/settings_view.dart';
+import 'package:cholai/app/widgets/system_widgets/safe_area_container.dart';
+import 'package:cholai/shared/theme.dart';
 import 'package:get/get.dart';
 
 class DashBoardView extends GetView<DashBoardController> {

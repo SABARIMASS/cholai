@@ -1,4 +1,4 @@
-import 'package:fuzionest_chatai/app/core/helpers/enums.dart'
+import 'package:cholai/app/core/helpers/enums.dart'
     show AppLaunchProgressStatus;
 import 'package:get/get.dart';
 

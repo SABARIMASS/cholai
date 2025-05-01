@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:fuzionest_chatai/app/widgets/svg_widget/svg_icon_widget.dart'
+import 'package:cholai/app/widgets/svg_widget/svg_icon_widget.dart'
     show CustomSvgIcon;
-import 'package:fuzionest_chatai/shared/theme.dart';
+import 'package:cholai/shared/theme.dart';
 
 class CustomSvgIconButton extends StatelessWidget {
   final String icon;

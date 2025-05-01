@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:fuzionest_chatai/app/widgets/responsive_body/message_body_widgets/show_message_svg_widget.dart';
+import 'package:cholai/app/widgets/responsive_body/message_body_widgets/show_message_svg_widget.dart';
 
 class AppGetCoreView extends StatelessWidget {
   final VoidCallback onRefresh; // Callback for refresh

@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:fuzionest_chatai/app/widgets/app_bar_widgets/app_bar_title_widget.dart';
-import 'package:fuzionest_chatai/app/widgets/app_bar_widgets/custom_app_bar.dart';
-import 'package:fuzionest_chatai/app/widgets/buttons/custom_button.dart';
-import 'package:fuzionest_chatai/app/widgets/system_widgets/safe_area_container.dart';
-import 'package:fuzionest_chatai/shared/theme.dart';
+import 'package:cholai/app/widgets/app_bar_widgets/app_bar_title_widget.dart';
+import 'package:cholai/app/widgets/app_bar_widgets/custom_app_bar.dart';
+import 'package:cholai/app/widgets/buttons/custom_button.dart';
+import 'package:cholai/app/widgets/system_widgets/safe_area_container.dart';
+import 'package:cholai/shared/theme.dart';
 import 'package:get/get.dart';
 import '../../../../shared/app_style.dart';
 import '../controller/auth_controller.dart';

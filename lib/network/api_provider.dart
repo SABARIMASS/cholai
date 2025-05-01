@@ -1,5 +1,5 @@
 import 'dart:convert';
-import 'package:fuzionest_chatai/app/core/utils/logger_util.dart';
+import 'package:cholai/app/core/utils/logger_util.dart';
 import 'package:get/get.dart';
 import '../app/core/routes/app_routes.dart';
 import '../app/core/local_storage/storage_service.dart';

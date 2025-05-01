@@ -1,4 +1,4 @@
-import 'package:fuzionest_chatai/app/core/config/utils/enum.dart';
+import 'package:cholai/app/core/config/utils/enum.dart';
 import 'data/app_info_args.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 

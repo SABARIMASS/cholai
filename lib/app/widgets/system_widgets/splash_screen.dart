@@ -1,9 +1,9 @@
 import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:fuzionest_chatai/app/core/constants/image_assets.dart';
-import 'package:fuzionest_chatai/app/widgets/images/custom_assets_widget.dart';
-import 'package:fuzionest_chatai/shared/theme.dart';
+import 'package:cholai/app/core/constants/image_assets.dart';
+import 'package:cholai/app/widgets/images/custom_assets_widget.dart';
+import 'package:cholai/shared/theme.dart';
 import 'safe_area_container.dart';
 
 class SplashScreen extends StatelessWidget {

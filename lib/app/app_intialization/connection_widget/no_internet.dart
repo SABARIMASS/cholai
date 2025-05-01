@@ -1,9 +1,9 @@
 import 'package:app_settings/app_settings.dart';
 import 'package:device_info_plus/device_info_plus.dart';
 import 'package:flutter/material.dart';
-import 'package:fuzionest_chatai/app/widgets/system_widgets/safe_area_container.dart'
+import 'package:cholai/app/widgets/system_widgets/safe_area_container.dart'
     show SafeAreaContainer;
-import 'package:fuzionest_chatai/shared/theme.dart';
+import 'package:cholai/shared/theme.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get_utils/src/platform/platform.dart';
 

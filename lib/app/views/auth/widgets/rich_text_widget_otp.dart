@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:fuzionest_chatai/shared/theme.dart';
+import 'package:cholai/shared/theme.dart';
 import '../../../../shared/app_style.dart';
 
 class RichTextWidgetOtp extends StatelessWidget {

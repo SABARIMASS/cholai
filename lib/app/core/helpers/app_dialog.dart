@@ -2,7 +2,7 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:fuzionest_chatai/app/widgets/buttons/custom_button.dart';
+import 'package:cholai/app/widgets/buttons/custom_button.dart';
 import 'package:get/get.dart';
 import '../../../shared/app_style.dart';
 import '../../../shared/theme.dart';

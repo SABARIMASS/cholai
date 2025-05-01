@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:fuzionest_chatai/shared/theme.dart';
+import 'package:cholai/shared/theme.dart';
 import '../loader_widgets/app_loader.dart';
 
 class BodyOverLayWidget extends StatelessWidget {
