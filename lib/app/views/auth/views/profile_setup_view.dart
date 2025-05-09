@@ -1,8 +1,8 @@
+import 'package:cholai/app/core/helpers/app_dialog.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:cholai/app/core/constants/image_assets.dart';
 import 'package:cholai/app/core/helpers/enums.dart';
-import 'package:cholai/app/core/utils/image_util.dart';
 import 'package:cholai/app/widgets/app_bar_widgets/app_bar_title_widget.dart';
 import 'package:cholai/app/widgets/app_bar_widgets/custom_app_bar.dart';
 import 'package:cholai/app/widgets/buttons/custom_button.dart';
@@ -38,7 +38,7 @@ class ProfileSetUpView extends GetView<AuthController> {
                         imageUrl:
                             controller.documentUploadtemp.value.tempPath ?? "",
                         onTap: () {
-                          chooseCameraAction(
+                          AppDialogHelpers.chooseCameraAction(
                             onTap: (CameraAction action) {
                               controller.openImage(action);
                             },

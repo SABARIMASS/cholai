@@ -1,5 +1,6 @@
 import 'package:cholai/app/core/helpers/image_helper.dart';
 import 'package:cholai/app/views/settings/controller/settings_controller.dart';
+import 'package:cholai/app/widgets/images/network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:get/state_manager.dart';
 
@@ -110,8 +111,8 @@ class SettingsView extends GetView<SettingsController> {
     return ListTile(
       leading: CircleAvatar(
         radius: 30,
-        backgroundImage: NetworkImage(
-          ImageHelper.networkImageFullUrl(
+        child: CommonCachedNetworkImage(
+          imageUrl: ImageHelper.networkImageFullUrl(
             controller.userService.userInfo.value.profileImage ?? "",
           ),
         ),

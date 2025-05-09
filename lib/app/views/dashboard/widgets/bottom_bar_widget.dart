@@ -41,15 +41,11 @@ class _BottomBarWidgetState extends State<BottomBarWidget> {
 
   @override
   Widget build(BuildContext context) {
-    return Positioned(
-      bottom: 10,
-      left: 0,
-      right: 0,
+    return SafeArea(
       child: Container(
-        margin: EdgeInsets.symmetric(horizontal: 10.w),
         decoration: BoxDecoration(
           color: Theme.of(context).appTheme.kAppBackgroundColor,
-          borderRadius: BorderRadius.circular(12.r),
+          borderRadius: BorderRadius.circular(0.r),
         ),
 
         padding: EdgeInsets.symmetric(vertical: 6.h, horizontal: 8.w),
@@ -70,7 +66,9 @@ class _BottomBarWidgetState extends State<BottomBarWidget> {
                   decoration: BoxDecoration(
                     color:
                         isSelected
-                            ? Theme.of(context).appTheme.kBlack
+                            ? Theme.of(
+                              context,
+                            ).appTheme.kPrimaryColor.withValues(alpha: 0.8)
                             : Colors.transparent,
                     borderRadius: BorderRadius.circular(12.r),
                     border: Border.all(
@@ -91,7 +89,9 @@ class _BottomBarWidgetState extends State<BottomBarWidget> {
                             color:
                                 isSelected
                                     ? Theme.of(context).appTheme.kWhiteColor
-                                    : Theme.of(context).appTheme.kBlack,
+                                    : Theme.of(
+                                      context,
+                                    ).appTheme.kIconPrimaryColor,
                             size: 22.r,
                           ),
                           if (widget.badges[index] > 0)
