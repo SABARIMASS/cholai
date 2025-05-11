@@ -1,4 +1,5 @@
 import 'package:cholai/app/views/auth/controller/auth_controller.dart';
+import 'package:cholai/app/views/chat/controller/chat_list_controller.dart';
 import 'package:cholai/app/views/dashboard/controller/dashboard_controller.dart';
 import 'package:cholai/app/views/settings/controller/settings_controller.dart';
 import 'package:get/get.dart';
@@ -11,5 +12,6 @@ class AppBindings extends Bindings {
     Get.lazyPut<AuthController>(() => AuthController());
     Get.lazyPut<DashBoardController>(() => DashBoardController());
     Get.lazyPut<SettingsController>(() => SettingsController());
+    Get.lazyPut<ChatListController>(() => ChatListController());
   }
 }

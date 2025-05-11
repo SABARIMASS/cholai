@@ -7,4 +7,5 @@ class ApiConstants {
   static String get setProfile => "${AppInfo.kAuthApi}set-profile";
   static String get uploadTemp =>
       "${AppInfo.kDocumentUpload}documents/upload-temp";
+  static String get userChatList => "${AppInfo.kChatApi}chat-list";
 }

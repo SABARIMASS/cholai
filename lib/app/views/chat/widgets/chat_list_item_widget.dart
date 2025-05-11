@@ -1,5 +1,9 @@
 import 'package:cholai/app/core/helpers/enums.dart';
+import 'package:cholai/app/widgets/images/network_image.dart';
+import 'package:cholai/shared/theme.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:hugeicons/hugeicons.dart';
 
 class ListItemWidget extends StatelessWidget {
   final String? profileImage;
@@ -43,10 +47,23 @@ class ListItemWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return ListTile(
       leading: CircleAvatar(
-        backgroundImage:
-            profileImage != null ? NetworkImage(profileImage!) : null,
-        child: profileImage == null ? Icon(Icons.person) : null,
-        radius: 24,
+        backgroundColor: Theme.of(
+          context,
+        ).appTheme.kPrimaryColor.withValues(alpha: 0.1),
+
+        child:
+            profileImage == null
+                ? Icon(Icons.person)
+                : CommonCachedNetworkImage(
+                  height: 50.h,
+                  width: 50.w,
+                  imageUrl: profileImage!,
+                  isCircle: true,
+                  errorWidget: Icon(
+                    HugeIcons.strokeRoundedUser,
+                    color: Theme.of(context).appTheme.kPrimaryColor,
+                  ),
+                ),
       ),
       title: Text(
         userName ?? '',
@@ -67,11 +84,9 @@ class ListItemWidget extends StatelessWidget {
         ],
       ),
       trailing: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
+        mainAxisAlignment: MainAxisAlignment.end,
+        crossAxisAlignment: CrossAxisAlignment.end,
         children: [
-          if (time != null)
-            Text(time!, style: TextStyle(fontSize: 12, color: Colors.grey)),
-          const SizedBox(height: 4),
           if (unreadCount != null && unreadCount! > 0)
             Container(
               padding: const EdgeInsets.all(6),
@@ -84,6 +99,9 @@ class ListItemWidget extends StatelessWidget {
                 style: const TextStyle(color: Colors.white, fontSize: 12),
               ),
             ),
+          const SizedBox(height: 4),
+          if (time != null)
+            Text(time!, style: TextStyle(fontSize: 12, color: Colors.grey)),
         ],
       ),
       contentPadding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),

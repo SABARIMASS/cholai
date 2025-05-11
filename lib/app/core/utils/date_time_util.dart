@@ -38,6 +38,32 @@ class DateTimeUtil {
     }
   }
 
+  static String getChatListTime(String dateString) {
+    DateTime? date = DateTime.tryParse(dateString);
+    if (date == null) return "Invalid date";
+
+    DateTime now = DateTime.now();
+    Duration diff = now.difference(date);
+
+    // Format time as 10:00 AM
+    String formattedTime =
+        "${date.hour > 12 ? date.hour - 12 : date.hour}:${date.minute.toString().padLeft(2, '0')} ${date.hour >= 12 ? 'PM' : 'AM'}";
+
+    if (diff.inDays == 0) {
+      return "Today, $formattedTime";
+    } else if (diff.inDays == 1) {
+      return "Yesterday, $formattedTime";
+    } else if (diff.inDays < 7) {
+      return "${diff.inDays} days ago, $formattedTime";
+    } else if (diff.inDays < 30) {
+      return "${(diff.inDays / 7).floor()} weeks ago, $formattedTime";
+    } else if (diff.inDays < 365) {
+      return "${(diff.inDays / 30).floor()} months ago, $formattedTime";
+    } else {
+      return "${(diff.inDays / 365).floor()} years ago, $formattedTime";
+    }
+  }
+
   static String getChatDayDateFormatted(String formattedDate) {
     DateTime now = DateTime.now();
     DateTime inputDate = DateFormat('dd MMM yyyy').parse(formattedDate);
