@@ -25,7 +25,7 @@ class DashBoardView extends GetView<DashBoardController> {
                 IndexedStack(
                   index: controller.dashboardCurrentViewIndex.value,
                   children: [
-                    const HomeView(),
+                    const ChatListView(),
                     const ReelsView(),
                     const CallsView(),
                     const SettingsView(),

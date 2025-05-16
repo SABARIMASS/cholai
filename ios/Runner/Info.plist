@@ -55,5 +55,7 @@
 	</array>
 	<key>NSUserTrackingUsageDescription</key>
 	<string>We would like to track your activity for personalized ads and analytics.</string>
+	<key>NSContactsUsageDescription</key>
+    <string>We need access to your contacts to display them in the app</string>
 </dict>
 </plist>

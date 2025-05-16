@@ -1,3 +1,7 @@
+import 'package:cholai/app/widgets/app_bar_widgets/app_bar_title_widget.dart';
+import 'package:cholai/app/widgets/app_bar_widgets/custom_app_bar.dart';
+import 'package:cholai/shared/app_style.dart';
+import 'package:cholai/shared/theme.dart';
 import 'package:flutter/material.dart';
 
 class CallsView extends StatelessWidget {
@@ -27,7 +31,7 @@ class CallsView extends StatelessWidget {
     ];
 
     return Scaffold(
-      appBar: AppBar(title: const Text("Calls")),
+      appBar: _appBarWidget(context),
       body: ListView.builder(
         itemCount: callHistory.length,
         itemBuilder: (context, index) {
@@ -57,6 +61,22 @@ class CallsView extends StatelessWidget {
             },
           );
         },
+      ),
+    );
+  }
+
+  MyAppBar _appBarWidget(BuildContext context) {
+    return MyAppBar(
+      title: AppBarTitleWidget(
+        title: "Calls",
+        alignment: Alignment.centerLeft,
+
+        disableBackButton: true,
+        titleStyle: TextStyle(
+          color: Theme.of(context).appTheme.kPrimaryTextColor,
+          fontSize: AppFontSize.large.value,
+          fontWeight: AppFontWeight.bold.value,
+        ),
       ),
     );
   }

@@ -10,7 +10,7 @@ import 'package:cholai/app/widgets/system_widgets/safe_area_container.dart';
 import 'package:cholai/shared/theme.dart';
 import 'package:get/get.dart';
 import '../../../../shared/app_style.dart';
-import '../controller/auth_controller.dart';
+import '../../../controllers/auth_controller.dart';
 import '../widgets/create_profile_widget.dart';
 
 class ProfileSetUpView extends GetView<AuthController> {

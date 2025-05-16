@@ -1,9 +1,10 @@
 import 'dart:async';
+import 'package:cholai/app/app_services/auth_service.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:cholai/app/core/helpers/snackbar_helper.dart';
 import 'package:cholai/app/core/languages/language_global.dart';
-import 'package:cholai/app/views/auth/service/api_service.dart';
+
 import 'package:cholai/app/widgets/inkwell/list_inkwell_widget.dart';
 import 'package:cholai/shared/app_style.dart';
 import 'package:cholai/shared/theme.dart';
@@ -52,7 +53,7 @@ class _ResendOtpWidgetState extends State<ResendOtpWidget> {
   Future<void> resendOtp() async {
     final userId = widget.userId;
 
-    resendOtpApi(userId)
+    AuthService.resendOtpApi(userId)
         .then((response) {
           if (response.status == 1) {
             widget.onOtpResend(response.otp ?? "");

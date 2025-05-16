@@ -13,7 +13,6 @@ class LanguageGlobal {
   static String tripsCompleted = Languages.languageContent.en.tripsCompleted;
   static String loginHours = Languages.languageContent.en.loginHours;
   static String lastUpdatedAt = Languages.languageContent.en.lastUpdatedAt;
-
   static String connectingWithServer =
       Languages.languageContent.en.connectingWithServer;
   static String acceptTheRide = Languages.languageContent.en.acceptTheRide;

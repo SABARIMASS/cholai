@@ -1,7 +1,9 @@
-import 'package:cholai/app/views/auth/controller/auth_controller.dart';
-import 'package:cholai/app/views/chat/controller/chat_list_controller.dart';
+import 'package:cholai/app/controllers/auth_controller.dart';
+import 'package:cholai/app/controllers/chat_detail_controller.dart';
+import 'package:cholai/app/controllers/chat_list_controller.dart';
+import 'package:cholai/app/controllers/contact_controller.dart';
 import 'package:cholai/app/views/dashboard/controller/dashboard_controller.dart';
-import 'package:cholai/app/views/settings/controller/settings_controller.dart';
+import 'package:cholai/app/controllers/settings_controller.dart';
 import 'package:get/get.dart';
 import '../../../network/api_provider.dart';
 
@@ -13,5 +15,7 @@ class AppBindings extends Bindings {
     Get.lazyPut<DashBoardController>(() => DashBoardController());
     Get.lazyPut<SettingsController>(() => SettingsController());
     Get.lazyPut<ChatListController>(() => ChatListController());
+    Get.lazyPut<ContactController>(() => ContactController());
+    Get.lazyPut<ChatDetailController>(() => ChatDetailController());
   }
 }

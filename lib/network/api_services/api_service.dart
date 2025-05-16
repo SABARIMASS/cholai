@@ -35,7 +35,7 @@ Future<DocumentTempUploadResponseData> documentUploadTempApi(
 
     // Make the request
     final response = await apiProvider.httpRequest(
-      resource: Resource(url: ApiConstants.uploadTemp, request: ''),
+      resource: Resource(url: ApiConstants.uploadTempUrl, request: ''),
       formData: FormData({'image': multipartFile}),
       requestType: RequestType.kPost,
     );

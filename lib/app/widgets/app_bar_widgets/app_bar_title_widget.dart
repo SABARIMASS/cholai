@@ -38,7 +38,7 @@ class AppBarTitleWidget extends StatelessWidget {
       padding:
           padding ??
           EdgeInsets.only(
-            left: disableBackButton == true ? 49.w : 3.w,
+            left: disableBackButton == true ? 14.w : 3.w,
             right: 16.w,
           ),
       child: Row(
@@ -77,7 +77,7 @@ class AppBarTitleWidget extends StatelessWidget {
                 ),
               ),
           if (actions != null) ...actions!,
-          if (actions == null) ...[SizedBox(width: 35.w)],
+          if (actions == null) ...[SizedBox(width: 14.w)],
         ],
       ),
     );

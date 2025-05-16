@@ -7,7 +7,7 @@ import 'package:cholai/app/widgets/system_widgets/safe_area_container.dart';
 import 'package:cholai/shared/theme.dart';
 import 'package:get/get.dart';
 import '../../../../shared/app_style.dart';
-import '../controller/auth_controller.dart';
+import '../../../controllers/auth_controller.dart';
 import '../widgets/phone_number_field_widget.dart';
 import '../widgets/rich_text_widget_signin.dart';
 

@@ -1,0 +1,89 @@
+class ChatDetailsRequest {
+  final String chatId;
+
+  ChatDetailsRequest({required this.chatId});
+
+  Map<String, dynamic> toJson() {
+    return {'chatId': chatId};
+  }
+}
+
+class ChatDetailsResponse {
+  int? status;
+  String? message;
+  List<ChatDateGroup>? data;
+
+  ChatDetailsResponse({this.status, this.message, this.data});
+
+  factory ChatDetailsResponse.fromJson(Map<String, dynamic> json) {
+    return ChatDetailsResponse(
+      status: json['status'],
+      message: json['message'],
+      data:
+          (json['data'] as List?)
+              ?.map((e) => ChatDateGroup.fromJson(e))
+              .toList(),
+    );
+  }
+}
+
+class ChatDateGroup {
+  String? dateLabel;
+  List<ChatMessage>? messages;
+
+  ChatDateGroup({this.dateLabel, this.messages});
+
+  factory ChatDateGroup.fromJson(Map<String, dynamic> json) {
+    return ChatDateGroup(
+      dateLabel: json['dateLabel'],
+      messages:
+          (json['messages'] as List?)
+              ?.map((e) => ChatMessage.fromJson(e))
+              .toList(),
+    );
+  }
+}
+
+class ChatMessage {
+  String? id;
+  String? messageId;
+  String? chatId;
+  String? senderId;
+  String? receiverId;
+  String? message;
+  String? status;
+  String? timestamp;
+  String? createdAt;
+  String? updatedAt;
+  int? v;
+
+  ChatMessage({
+    this.id,
+    this.messageId,
+    this.chatId,
+    this.senderId,
+    this.receiverId,
+    this.message,
+    this.status,
+    this.timestamp,
+    this.createdAt,
+    this.updatedAt,
+    this.v,
+  });
+
+  factory ChatMessage.fromJson(Map<String, dynamic> json) {
+    return ChatMessage(
+      id: json['_id'],
+      messageId: json['messageId'],
+      chatId: json['chatId'],
+      senderId: json['senderId'],
+      receiverId: json['receiverId'],
+      message: json['message'],
+      status: json['status'],
+      timestamp: json['timestamp'],
+      createdAt: json['createdAt'],
+      updatedAt: json['updatedAt'],
+      v: json['__v'],
+    );
+  }
+}

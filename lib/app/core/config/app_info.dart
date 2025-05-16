@@ -10,7 +10,7 @@ extension BaseURLHelper on BaseUrls {
       case BaseUrls.demo:
         return 'http://3.220.161.171:8001';
       case BaseUrls.local:
-        return 'http://192.168.149.64:4000';
+        return 'http://192.168.156.64:4000';
     }
   }
 }
@@ -20,6 +20,7 @@ class AppInfo {
   static String kAppBaseUrl = BaseUrls.local.rawValue;
   static String kAuthApi = '$kAppBaseUrl/api/auth/';
   static String kChatApi = '$kAppBaseUrl/api/chats/';
+  static String kContactApi = '$kAppBaseUrl/api/contacts/';
   static String kUserApi = '$kAppBaseUrl/preference/v1/';
   static String kDocumentUpload = '$kAppBaseUrl/api/';
   static String kImageBase = '$kAppBaseUrl/';
