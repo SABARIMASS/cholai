@@ -36,7 +36,7 @@ class DashBoardView extends GetView<DashBoardController> {
           ),
           bottomNavigationBar: BottomBarWidget(
             initialIndex: controller.dashboardCurrentViewIndex.value,
-            badges: [2, 0, 1, 1],
+            badges: [0, 0, 0, 0],
             onTap: (index) {
               //updating the dashboardCurrentViewIndex number
               controller.onChangingDashboardView(index);

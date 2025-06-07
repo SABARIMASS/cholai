@@ -1,4 +1,5 @@
 import 'package:cholai/app/controllers/contact_controller.dart';
+import 'package:cholai/app/core/helpers/image_helper.dart';
 import 'package:cholai/app/views/contacts/widgts/contact_list_item_widget.dart';
 import 'package:cholai/app/widgets/app_bar_widgets/app_bar_title_widget.dart';
 import 'package:cholai/app/widgets/app_bar_widgets/custom_app_bar.dart';
@@ -27,7 +28,9 @@ class ContactView extends GetView<ContactController> {
         final chat = controller.chatListResponse.value.data?[index];
         return ContactListItemWidget(
           contactName: chat?.name ?? "",
-          contactImage: chat?.profileImage ?? "",
+          contactImage: ImageHelper.networkImageFullUrl(
+            chat?.profileImage ?? "",
+          ),
           countryCode: chat?.countryCode ?? "",
           phoneNumber: chat?.phoneNumber ?? "",
           onTap: () {},

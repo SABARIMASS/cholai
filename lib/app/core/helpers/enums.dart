@@ -27,4 +27,4 @@ enum AppLaunchProgressStatus { kLocation, kGetCore, kNone }
 
 enum CameraAction { kGallery, kCamera, kPdf, kDoc }
 
-enum MessageStatus { sent, received, read }
+enum MessageStatus { sent, received, read, none }

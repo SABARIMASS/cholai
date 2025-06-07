@@ -1,3 +1,4 @@
+import 'package:cholai/app/core/helpers/image_helper.dart';
 import 'package:cholai/app/core/routes/app_routes.dart';
 import 'package:cholai/app/core/utils/date_time_util.dart';
 import 'package:cholai/app/core/utils/message_status_utils.dart';
@@ -36,12 +37,16 @@ class ChatListView extends GetView<ChatListController> {
       itemBuilder: (context, index) {
         final chat = controller.chatListResponse.value.data?[index];
         return ListItemWidget(
-          profileImage: chat?.receiver?.profileImage ?? "",
+          profileImage: ImageHelper.networkImageFullUrl(
+            chat?.receiver?.profileImage ?? "",
+          ),
           userName: chat?.receiver?.name ?? "",
           description: chat?.lastMessage?.text ?? "",
           time: DateTimeUtil.getChatListTime(chat?.lastMessage?.time ?? ''),
           unreadCount: chat?.unreadCount,
           latestMessageStatus: MessageUtills.getMessageStatusFromString(
+            controller.userService.userInfo.value.userId ?? '',
+            chat?.lastMessage?.senderId ?? '',
             chat?.lastMessage?.status ?? '',
           ),
         );

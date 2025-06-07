@@ -3,7 +3,7 @@ import 'package:cholai/app/core/utils/logger_util.dart';
 
 class ImageHelper {
   static networkImageFullUrl(String imagePath) {
-    LoggerUtil.debug("${AppInfo.kDocumentUpload}$imagePath");
+    LoggerUtil.debug("${AppInfo.kImageBase}$imagePath");
     return "${AppInfo.kImageBase}$imagePath";
   }
 }
