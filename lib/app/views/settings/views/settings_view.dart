@@ -8,6 +8,7 @@ import 'package:cholai/app/widgets/images/network_image.dart';
 import 'package:cholai/shared/app_style.dart';
 import 'package:cholai/shared/theme.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:get/state_manager.dart';
 import 'package:hugeicons/hugeicons.dart';
@@ -50,13 +51,12 @@ class SettingsView extends GetView<SettingsController> {
 
   Widget _buildProfileSection(BuildContext context) {
     return ListTile(
-      leading: CircleAvatar(
-        radius: 30,
-        child: CommonCachedNetworkImage(
-          isCircle: true,
-          imageUrl: ImageHelper.networkImageFullUrl(
-            controller.userService.userInfo.value.profileImage ?? "",
-          ),
+      leading: CommonCachedNetworkImage(
+        height: 50.h,
+        width: 50.w,
+        isCircle: true,
+        imageUrl: ImageHelper.networkImageFullUrl(
+          controller.userService.userInfo.value.profileImage ?? "",
         ),
       ),
       title: Text(controller.userService.userInfo.value.name ?? ""),

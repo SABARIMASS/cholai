@@ -7,7 +7,7 @@ import 'package:cholai/shared/theme.dart';
 class AppBarTitleWidget extends StatelessWidget {
   final bool withCircle;
   final VoidCallback? onTap;
-  final String title;
+  final String? title;
   final bool? disableBackButton;
   final TextStyle? titleStyle;
   final EdgeInsetsGeometry? padding;
@@ -21,7 +21,7 @@ class AppBarTitleWidget extends StatelessWidget {
     super.key,
     this.withCircle = false,
     this.onTap,
-    required this.title,
+    this.title,
     this.titleStyle,
     this.padding,
     this.actions,
@@ -64,7 +64,7 @@ class AppBarTitleWidget extends StatelessWidget {
                   child: Padding(
                     padding: titlePadding ?? const EdgeInsets.all(0),
                     child: Text(
-                      title,
+                      title ?? "",
                       style:
                           titleStyle ??
                           TextStyle(

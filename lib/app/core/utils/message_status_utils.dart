@@ -14,7 +14,8 @@ class MessageUtills {
           return MessageStatus.sent;
         case 'received':
           return MessageStatus.received;
-
+        case 'request':
+          return MessageStatus.request;
         default:
           return MessageStatus.none;
       }

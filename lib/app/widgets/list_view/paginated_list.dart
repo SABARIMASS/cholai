@@ -24,6 +24,7 @@ class PaginatedListView extends StatefulWidget {
   final Widget loadingWidget; // Widget to display when loading
   final ScrollController? scrollController;
   final EdgeInsetsGeometry? padding;
+  final bool reverse; // Reverse the list view
   const PaginatedListView({
     super.key,
     this.onRefresh,
@@ -41,7 +42,7 @@ class PaginatedListView extends StatefulWidget {
     this.padding,
     this.isLoading = false, // Default value is false
     Widget? loadingWidget, // Loading widget
-
+    this.reverse = false, // Default value is false
     this.scrollController,
   }) : loadingWidget = loadingWidget ?? const Center(child: AppLoader());
   @override
@@ -118,6 +119,7 @@ class _PaginatedListViewState extends State<PaginatedListView> {
 
   Widget listViewBuilder() {
     return ListView.separated(
+      reverse: widget.reverse,
       controller: widget.scrollController,
       shrinkWrap: true,
       itemCount: widget.itemCount,

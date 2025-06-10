@@ -10,7 +10,7 @@ extension BaseURLHelper on BaseUrls {
       case BaseUrls.demo:
         return 'http://3.220.161.171:8001';
       case BaseUrls.local:
-        return 'http://192.168.233.191:4000';
+        return 'http://192.168.247.64:4000';
     }
   }
 }

@@ -9,11 +9,17 @@ class ChatDetailsRequest {
 }
 
 class ChatDetailsResponse {
+  bool isLoading = false;
   int? status;
   String? message;
   List<ChatDateGroup>? data;
 
-  ChatDetailsResponse({this.status, this.message, this.data});
+  ChatDetailsResponse({
+    this.status,
+    this.message,
+    this.data,
+    this.isLoading = false,
+  });
 
   factory ChatDetailsResponse.fromJson(Map<String, dynamic> json) {
     return ChatDetailsResponse(
@@ -84,6 +90,21 @@ class ChatMessage {
       createdAt: json['createdAt'],
       updatedAt: json['updatedAt'],
       v: json['__v'],
+    );
+  }
+  ChatMessage copyWith({
+    String? messageId,
+    String? senderId,
+    String? receiverId,
+    String? message,
+    String? status,
+  }) {
+    return ChatMessage(
+      messageId: messageId ?? this.messageId,
+      senderId: senderId ?? this.senderId,
+      receiverId: receiverId ?? this.receiverId,
+      message: message ?? this.message,
+      status: status ?? this.status,
     );
   }
 }

@@ -12,7 +12,7 @@ class ChatListResponse {
   bool? isLoading;
   int? status;
   String? message;
-  List<ChatItem>? data;
+  List<Chat>? data;
 
   // Constructor to create instances directly
   ChatListResponse({this.isLoading, this.status, this.message, this.data});
@@ -24,62 +24,98 @@ class ChatListResponse {
     if (json['data'] != null) {
       data = [];
       for (var v in json['data']) {
-        data!.add(ChatItem.fromJson(v));
+        data!.add(Chat.fromJson(v));
       }
     }
   }
 }
 
-class ChatItem {
+class Chat {
   String? chatId;
-  LastMessage? lastMessage;
+  Message? lastMessage;
   int? unreadCount;
-  Receiver? receiver;
+  User? receiver;
+  User? sender;
 
-  // Constructor to create instances directly
-  ChatItem({this.chatId, this.lastMessage, this.unreadCount, this.receiver});
+  Chat({
+    this.chatId,
+    this.lastMessage,
+    this.unreadCount,
+    this.receiver,
+    this.sender,
+  });
 
-  // fromJson to create instance from JSON
-  ChatItem.fromJson(Map<String, dynamic> json) {
-    chatId = json['chatId'];
-    lastMessage =
-        json['lastMessage'] != null
-            ? LastMessage.fromJson(json['lastMessage'])
-            : null;
-    unreadCount = json['unreadCount'];
-    receiver =
-        json['receiver'] != null ? Receiver.fromJson(json['receiver']) : null;
+  factory Chat.fromJson(Map<String, dynamic> json) {
+    return Chat(
+      chatId: json['chatId'],
+      lastMessage:
+          json['lastMessage'] != null
+              ? Message.fromJson(json['lastMessage'])
+              : null,
+      unreadCount: json['unreadCount'],
+      receiver:
+          json['opponent'] != null ? User.fromJson(json['opponent']) : null,
+      sender: json['sender'] != null ? User.fromJson(json['sender']) : null,
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return {
+      'chatId': chatId,
+      'lastMessage': lastMessage?.toJson(),
+      'unreadCount': unreadCount,
+      'receiver': receiver?.toJson(),
+      'sender': sender?.toJson(),
+    };
   }
 }
 
-class LastMessage {
+class Message {
   String? text;
   String? status;
   String? time;
   String? senderId;
+  String? receiverId;
 
-  // Constructor to create instances directly
-  LastMessage({this.text, this.status, this.time, this.senderId});
+  Message({this.text, this.status, this.time, this.senderId, this.receiverId});
 
-  // fromJson to create instance from JSON
-  LastMessage.fromJson(Map<String, dynamic> json) {
-    text = json['text'];
-    status = json['status'];
-    time = json['time'];
-    senderId = json['senderId'];
+  factory Message.fromJson(Map<String, dynamic> json) {
+    return Message(
+      text: json['text'],
+      status: json['status'],
+      time: json['time'],
+      senderId: json['senderId'],
+      receiverId: json['receiverId'],
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return {
+      'text': text,
+      'status': status,
+      'time': time,
+      'senderId': senderId,
+      'receiverId': receiverId,
+    };
   }
 }
 
-class Receiver {
+class User {
+  String? sId;
   String? name;
   String? profileImage;
 
-  // Constructor to create instances directly
-  Receiver({this.name, this.profileImage});
+  User({this.name, this.profileImage, this.sId});
 
-  // fromJson to create instance from JSON
-  Receiver.fromJson(Map<String, dynamic> json) {
-    name = json['name'];
-    profileImage = json['profileImage'];
+  factory User.fromJson(Map<String, dynamic> json) {
+    return User(
+      name: json['name'],
+      profileImage: json['profileImage'],
+      sId: json['id'],
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return {'name': name, 'profileImage': profileImage, 'id': sId};
   }
 }

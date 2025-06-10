@@ -12,6 +12,7 @@ import 'package:cholai/app/widgets/responsive_body/message_body_widgets/show_mes
 import 'package:cholai/shared/app_style.dart';
 import 'package:cholai/shared/theme.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:hugeicons/hugeicons.dart';
 
@@ -30,10 +31,15 @@ class ChatListView extends GetView<ChatListController> {
     return PaginatedListView(
       listEmptyWidget: ShowMessageSvgWidget(
         message: controller.chatListResponse.value.message,
+        onRefresh: () => controller.callChatListApi(),
       ),
       isLoading: controller.chatListResponse.value.isLoading ?? false,
       backgroundColor: Theme.of(context).appTheme.kAppBackgroundColor,
       itemCount: controller.chatListResponse.value.data?.length ?? 0,
+      onRefresh: () async {
+        controller.callChatListApi();
+        return Future.value();
+      },
       itemBuilder: (context, index) {
         final chat = controller.chatListResponse.value.data?[index];
         return ListItemWidget(
@@ -49,6 +55,18 @@ class ChatListView extends GetView<ChatListController> {
             chat?.lastMessage?.senderId ?? '',
             chat?.lastMessage?.status ?? '',
           ),
+          onTap:
+              () => Get.toNamed(
+                AppRoutes.chatDetailView,
+                arguments: {
+                  'chatId': chat?.chatId,
+                  'receiverName': chat?.receiver?.name,
+                  'receiverProfileImage': ImageHelper.networkImageFullUrl(
+                    chat?.receiver?.profileImage ?? "",
+                  ),
+                  'receiverId': chat?.receiver?.sId ?? '',
+                },
+              ),
         );
       },
       separator: SizedBox.shrink(),
@@ -58,6 +76,7 @@ class ChatListView extends GetView<ChatListController> {
   MyAppBar _appBarWidget(BuildContext context) {
     return MyAppBar(
       title: AppBarTitleWidget(
+        padding: EdgeInsets.only(left: 14.w, right: 6.w),
         title: "Chats",
         alignment: Alignment.centerLeft,
         actions: [

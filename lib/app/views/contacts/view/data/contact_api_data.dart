@@ -18,11 +18,13 @@ class ContactRequestData {
 }
 
 class ContactModel {
+  String? sId;
   String? countryCode;
   String? phoneNumber;
   String? name;
   String? profileImage;
   ContactModel({
+    this.sId,
     this.countryCode,
     this.phoneNumber,
     this.name,
@@ -31,6 +33,7 @@ class ContactModel {
 
   factory ContactModel.fromJson(Map<String, dynamic> json) {
     return ContactModel(
+      sId: json['chatId'],
       countryCode: json['countryCode'],
       phoneNumber: json['phoneNumber'],
       name: json['name'],

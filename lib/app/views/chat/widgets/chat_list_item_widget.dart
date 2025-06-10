@@ -1,4 +1,5 @@
 import 'package:cholai/app/core/helpers/enums.dart';
+import 'package:cholai/app/core/helpers/message_status_helpers.dart';
 import 'package:cholai/app/widgets/images/network_image.dart';
 import 'package:cholai/shared/theme.dart';
 import 'package:flutter/material.dart';
@@ -12,7 +13,7 @@ class ListItemWidget extends StatelessWidget {
   final String? time;
   final int? unreadCount;
   final MessageStatus? latestMessageStatus;
-
+  final void Function()? onTap;
   const ListItemWidget({
     super.key,
     this.profileImage,
@@ -21,27 +22,8 @@ class ListItemWidget extends StatelessWidget {
     this.time,
     this.unreadCount,
     this.latestMessageStatus,
+    this.onTap,
   });
-
-  IconData? _getStatusIcon(MessageStatus? status) {
-    switch (status) {
-      case MessageStatus.sent:
-        return Icons.check;
-      case MessageStatus.received:
-        return Icons.done_all;
-      case MessageStatus.read:
-        return Icons.done_all; // Could be blue if styled
-      default:
-        return null;
-    }
-  }
-
-  Color? _getStatusColor(MessageStatus? status) {
-    if (status == MessageStatus.read) {
-      return Colors.blue;
-    }
-    return Colors.grey;
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -71,13 +53,20 @@ class ListItemWidget extends StatelessWidget {
       ),
       subtitle: Row(
         children: [
-          if (latestMessageStatus != null)
+          if (latestMessageStatus != null &&
+              latestMessageStatus != MessageStatus.none)
             Icon(
-              _getStatusIcon(latestMessageStatus),
+              MessageStatusHelper.getStatusIcon(latestMessageStatus),
               size: 16,
-              color: _getStatusColor(latestMessageStatus),
+              color: MessageStatusHelper.getStatusColor(latestMessageStatus),
             ),
-          const SizedBox(width: 4),
+          SizedBox(
+            width:
+                latestMessageStatus != null &&
+                        latestMessageStatus != MessageStatus.none
+                    ? 4
+                    : 0,
+          ),
           Expanded(
             child: Text(description ?? '', overflow: TextOverflow.ellipsis),
           ),
@@ -105,9 +94,7 @@ class ListItemWidget extends StatelessWidget {
         ],
       ),
       contentPadding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
-      onTap: () {
-        // Handle tap
-      },
+      onTap: onTap,
     );
   }
 }

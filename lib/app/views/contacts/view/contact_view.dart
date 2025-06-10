@@ -1,5 +1,6 @@
 import 'package:cholai/app/controllers/contact_controller.dart';
 import 'package:cholai/app/core/helpers/image_helper.dart';
+import 'package:cholai/app/core/routes/app_routes.dart';
 import 'package:cholai/app/views/contacts/widgts/contact_list_item_widget.dart';
 import 'package:cholai/app/widgets/app_bar_widgets/app_bar_title_widget.dart';
 import 'package:cholai/app/widgets/app_bar_widgets/custom_app_bar.dart';
@@ -33,7 +34,19 @@ class ContactView extends GetView<ContactController> {
           ),
           countryCode: chat?.countryCode ?? "",
           phoneNumber: chat?.phoneNumber ?? "",
-          onTap: () {},
+          onTap: () {
+            Get.toNamed(
+              AppRoutes.chatDetailView,
+              arguments: {
+                'chatId': "",
+                'receiverName': chat?.name ?? "",
+                'receiverProfileImage': ImageHelper.networkImageFullUrl(
+                  chat?.profileImage ?? "",
+                ),
+                'receiverId': chat?.sId ?? '',
+              },
+            );
+          },
         );
       },
       separator: SizedBox.shrink(),

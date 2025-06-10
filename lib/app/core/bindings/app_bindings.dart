@@ -16,6 +16,6 @@ class AppBindings extends Bindings {
     Get.lazyPut<SettingsController>(() => SettingsController());
     Get.lazyPut<ChatListController>(() => ChatListController());
     Get.lazyPut<ContactController>(() => ContactController());
-    Get.lazyPut<ChatDetailController>(() => ChatDetailController());
+    Get.lazyPut<ChatDetailsController>(() => ChatDetailsController());
   }
 }
