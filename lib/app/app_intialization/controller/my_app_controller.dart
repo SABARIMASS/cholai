@@ -1,4 +1,5 @@
 import 'dart:io';
+import 'package:cholai/app/app_services/socket_service.dart';
 import 'package:flutter/material.dart';
 import 'package:cholai/app/core/utils/logger_util.dart';
 import 'package:cholai/app/views/auth/data/profile_create_api_data.dart';
@@ -46,6 +47,7 @@ class MyAppController extends GetxController {
     final status = userData.userId != null && userData.userId != '';
     switch (status) {
       case true:
+        SocketService().connectSocket(userData.userId!);
         Get.offAllNamed(AppRoutes.dashboardView);
         break;
       default:

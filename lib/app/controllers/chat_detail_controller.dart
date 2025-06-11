@@ -1,9 +1,11 @@
 import 'package:cholai/app/app_services/chat_service.dart';
+import 'package:cholai/app/app_services/socket_service.dart';
 import 'package:cholai/app/core/languages/language_global.dart';
 import 'package:cholai/app/core/services/user_service.dart';
 import 'package:cholai/app/core/utils/logger_util.dart';
 import 'package:cholai/app/views/chat/api_data/chat_detail_api_data.dart';
 import 'package:cholai/app/views/chat/api_data/mark_messages_read_api_data.dart';
+import 'package:cholai/app/views/chat/api_data/socket_chat_message_data.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
 
@@ -20,6 +22,12 @@ class ChatDetailsController extends GetxController {
   void onInit() {
     super.onInit();
     callChatDetailsApi();
+  }
+
+  @override
+  void onClose() {
+    SocketService().leaveChat(chatId.value);
+    super.onClose();
   }
 }
 
@@ -60,6 +68,7 @@ extension ChatDetailsControllerApi on ChatDetailsController {
                     'markMessagesReadApi Error markMessagesReadApi marking messages as read: $error',
                   );
                 });
+            listenToChatDetail();
           }
         })
         .onError((error, stackTrace) {
@@ -127,9 +136,73 @@ extension ChatDetailsControllerUtils on ChatDetailsController {
     required int index,
     required int gropupIndex,
   }) {
+    if (chatId.value.isEmpty) {
+      listenToChatDetail(updatedMessage.chatId);
+    }
     chatId.value = updatedMessage.chatId ?? chatId.value;
     chatDetailsResponse.value.data?[gropupIndex].messages?[index] =
         updatedMessage;
     chatDetailsResponse.refresh();
+  }
+
+  void listenToChatDetail([String? userChatId]) {
+    final socket = SocketService().socketInstance;
+
+    SocketService().joinChat(userChatId ?? chatId.value);
+
+    socket.on('updateChatDetails', (data) {
+      LoggerUtil.debug('New message received: $data');
+      SocketChatMessageData socketChatMessageData =
+          SocketChatMessageData.fromJson(data);
+      if (socketChatMessageData.chatId != chatId.value) {
+        LoggerUtil.debug(
+          'Received message for different chatId: ${socketChatMessageData.chatId}',
+        );
+        return;
+      }
+      if (chatDetailsResponse.value.data?.isEmpty ?? true) {
+        // If the data is empty, initialize it with today's date
+        chatDetailsResponse.value.data = [
+          ChatDateGroup(dateLabel: 'Today', messages: []),
+        ];
+      }
+      final todayDateGroup = chatDetailsResponse.value.data?.firstWhere(
+        (group) => group.dateLabel == 'Today',
+        orElse: () => ChatDateGroup(dateLabel: 'Today', messages: []),
+      );
+      if (todayDateGroup != null) {
+        todayDateGroup.messages?.add(
+          ChatMessage(
+            senderId: socketChatMessageData.senderId,
+            receiverId: socketChatMessageData.receiverId,
+            message: socketChatMessageData.message,
+            timestamp:
+                DateTime.fromMillisecondsSinceEpoch(
+                  socketChatMessageData.timestamp * 1000,
+                ).toIso8601String(),
+            status: socketChatMessageData.status,
+          ),
+        );
+        chatDetailsResponse.refresh();
+      } else {
+        // If no 'Today' group exists, create it
+        LoggerUtil.debug('No "Today" group found, creating a new one.');
+        LoggerUtil.debug(
+          'Creating new ChatDateGroup with message: ${socketChatMessageData.message}',
+        );
+        LoggerUtil.debug(
+          'ChatDetailsResponse before adding new group: ${chatDetailsResponse.value.data}',
+        );
+        LoggerUtil.debug(
+          'ChatDetailsResponse data length before adding new group: ${chatDetailsResponse.value.data?.length}',
+        );
+        LoggerUtil.debug(
+          'ChatDetailsResponse data first message: ${chatDetailsResponse.value.data?.first.messages?.firstOrNull?.message}',
+        );
+        chatDetailsResponse.value.data = [
+          ChatDateGroup(dateLabel: 'Today', messages: []),
+        ];
+      }
+    });
   }
 }
