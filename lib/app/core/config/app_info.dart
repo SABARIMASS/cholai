@@ -6,7 +6,7 @@ extension BaseURLHelper on BaseUrls {
   String get rawValue {
     switch (this) {
       case BaseUrls.live:
-        return 'https://fb.fuzionest.com';
+        return 'https://cholai-node.onrender.com';
       case BaseUrls.demo:
         return 'http://3.220.161.171:8001';
       case BaseUrls.local:
@@ -17,7 +17,7 @@ extension BaseURLHelper on BaseUrls {
 
 class AppInfo {
   static AppDeliveryType kAppDeliveryType = AppDeliveryType.service;
-  static String kAppBaseUrl = BaseUrls.local.rawValue;
+  static String kAppBaseUrl = BaseUrls.live.rawValue;
   static String kAuthApi = '$kAppBaseUrl/api/auth/';
   static String kChatApi = '$kAppBaseUrl/api/chats/';
   static String kContactApi = '$kAppBaseUrl/api/contacts/';

@@ -47,7 +47,6 @@ class MyAppController extends GetxController {
     final status = userData.userId != null && userData.userId != '';
     switch (status) {
       case true:
-        SocketService().connectSocket(userData.userId!);
         Get.offAllNamed(AppRoutes.dashboardView);
         break;
       default:
